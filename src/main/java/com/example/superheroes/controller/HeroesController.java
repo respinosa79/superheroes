@@ -75,7 +75,7 @@ public class HeroesController {
 	
 	@PreAuthorize("hasRole('ADMIN')")
 	@DeleteMapping("/{id}")
-    public ResponseEntity<String> updateHeroes(@PathVariable(value = "id", required = true) long id){
+    public ResponseEntity<String> deleteHeroes(@PathVariable(value = "id", required = true) long id){
 		try {
 			heroesService.deleteHeroes(id);
 			return ResponseEntity.ok().body("heroe deleted");
